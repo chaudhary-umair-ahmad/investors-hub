@@ -1,0 +1,391 @@
+---
+alwaysApply: true
+---
+# Header Design System Rules
+
+This document defines the design system rules for the header section of the Investors Hub Landing Page ONLY, based on the Figma design specifications.
+
+## Layout & Structure
+
+### Container
+- **Max Width**: `1200px` (centered)
+- **Horizontal Padding**: `83px` on both sides
+- **Structure**: Two-tier header layout
+  - Top utility bar (profile & settings)
+  - Main navigation bar
+
+### Header Hierarchy
+```
+Header (Fixed/Sticky)
+├── Top Utility Bar (36px height)
+│   ├── Left Section: Language + Settings
+│   └── Right Section: User Actions
+└── Main Navigation Bar (69px height)
+    ├── Left Section: Logo
+    └── Right Section: Navigation Items + CTA Button
+```
+
+## Colors
+
+### Background Colors
+- **Top Bar Background**: `#000000` (solid black)
+- **Main Navigation Background**: `rgba(0, 0, 0, 0.5)` (50% transparent black overlay)
+- **Primary CTA Button**: `#28b16d` (bayut green)
+- **Badge Background**: `#ff3d16` (urgent red)
+
+### Text Colors
+- **Primary Text**: `#FFFFFF` (pure white)
+- **Secondary Text**: `#E6E6E6` (light grey)
+- **Button Text**: `#FFFFFF` (white)
+- **Badge Text**: `#FFFFFF` (white)
+
+### Border Colors
+- **Divider Line**: `rgba(222, 222, 222, 0.15)` (15% opacity white)
+- Applied as bottom border on top utility bar
+
+## Typography
+
+### Font Family
+- **Primary Font**: `Lato, sans-serif`
+- **Font Weights**:
+  - Regular: 400 (default navigation items)
+  - Semibold: 600 (CTA button text)
+  - Bold: 700 (featured navigation items, "Log in" text)
+
+### Font Sizes & Line Heights
+- **Top Utility Bar**: 
+  - Size: `14px`
+  - Line Height: `14px` (1:1 ratio)
+  
+- **Main Navigation Items**: 
+  - Size: `16px`
+  - Line Height: `16px` (1:1 ratio)
+  
+- **Badge Text**: 
+  - Size: `8px`
+  - Line Height: `7.765px`
+  - Letter Spacing: `0.48px` (uppercase text)
+
+## Spacing System
+
+### Vertical Spacing
+- **Top Bar Height**: `36px` total
+  - Padding Y: `9px` top/bottom
+  - Content Height: `18px`
+
+- **Main Navigation Height**: `69px` total
+  - Padding Top: `16px`
+  - Padding Bottom: `15px`
+  - Content Height: `32px` (logo height)
+
+### Horizontal Spacing
+- **Container Side Padding**: `83px`
+- **Navigation Item Gaps**: 
+  - Small: `22px` (between most nav items)
+  - Medium: `32px` (before special nav items)
+  - Large: `16px` (top bar user actions)
+- **Internal Component Spacing**:
+  - Icon-to-text gap: `8px`
+  - Badge gap: `4.853px`
+
+### Element-Specific Spacing
+- **Logo**:
+  - Width: `125px`
+  - Height: `32px`
+  - Right margin: `16px`
+
+- **Icons**:
+  - Size: `18px × 18px`
+  - Right margin: `8px` (when preceding text)
+
+## Interactive Elements
+
+### Buttons
+
+#### Primary CTA Button ("Post a Listing")
+- **Background**: `#28b16d` (bayut green)
+- **Border Radius**: `8px`
+- **Padding**: `8px` vertical, `12px` horizontal
+- **Height**: `36px`
+- **Width**: `143px` (fixed)
+- **Font**: Lato Semibold, 16px
+- **Text Color**: `#FFFFFF`
+- **Icon**: 17px × 18px (left-aligned)
+- **Hover State**: Slightly darker green (recommended: `#239f5f`)
+- **Active State**: Even darker (recommended: `#1e8a52`)
+
+### Navigation Links
+
+#### Standard Nav Link
+- **Font**: Lato Regular, 16px
+- **Color**: `#E6E6E6`
+- **Padding**: `0 22px` (handled by parent margin)
+- **Hover State**: `#FFFFFF` (brighter white)
+- **Cursor**: `pointer`
+
+#### Featured Nav Link ("Invest in Saudi")
+- **Font**: Lato Bold, 16px
+- **Color**: `#E6E6E6`
+- **Has Badge**: "NEW" label
+
+#### Utility Nav Link (Top Bar)
+- **Font**: Lato Regular, 14px
+- **Color**: `#FFFFFF`
+- **Background on Hover**: `rgba(255, 255, 255, 0.1)`
+- **Border Radius**: `4px`
+
+### Badge Component
+
+#### "NEW" Badge Specifications
+- **Background**: `#ff3d16` (red)
+- **Border Radius**: `9.706px` (nearly circular)
+- **Padding**: `3px` all sides
+- **Width**: `33px` (fixed)
+- **Position**: Absolute (top-right of parent)
+- **Offset**: `-9px` top, `10px` right
+- **Text**: 
+  - "NEW" (uppercase)
+  - Lato Bold, 8px
+  - Color: `#FFFFFF`
+  - Letter Spacing: `0.48px`
+
+### Icons
+
+#### Icon Specifications
+- **Standard Size**: `18px × 18px`
+- **Language Icon**: `languageIcon.svg` (20px × 20px) - Globe with "A" symbol
+- **Language Icon Path**: `rules/assets/languageIcon.svg`
+- **Download Icon**: `11px × 16px`
+- **Dropdown Arrow**: `9px × 14px`
+- **Format**: SVG (preferred) or PNG with 2x resolution
+- **Color**: `#FFFFFF` (use CSS filters or SVG fill)
+
+## Component Specifications
+
+### Logo
+- **Width**: `125px`
+- **Height**: `32px`
+- **Format**: SVG (scalable)
+- **Colors**: Bayut green (#28b16d) + text
+- **Position**: Left-aligned in main nav
+- **Alt Text**: "Bayut - Invest in Saudi"
+
+### Language Switcher
+- **Layout**: Horizontal (icon + text)
+- **Icon**: `languageIcon.svg` (20px × 20px) - Globe with "A" symbol
+- **Icon Path**: `rules/assets/languageIcon.svg`
+- **Text**: "EN" (current language code)
+- **Width**: `65px`
+- **Padding**: `2.5px` vertical (for 25px height)
+- **Interactive**: Dropdown menu on click
+
+### User Profile Section
+- **Layout**: Icon + Username
+- **Icon Size**: `18px × 18px`
+- **Font**: Lato Bold, 14px
+- **Default Text**: "Log in" (when not authenticated)
+- **Authenticated**: Show username (e.g., "Abu Hamza")
+
+### Dropdown Nav Item ("More")
+- **Layout**: Text + Down Arrow
+- **Arrow Icon**: `9px × 14px`
+- **Gap**: `6px` between text and arrow
+- **Dropdown Position**: Below, left-aligned
+- **Dropdown Background**: `#FFFFFF` (white)
+- **Dropdown Shadow**: `0 4px 12px rgba(0, 0, 0, 0.15)`
+
+## Responsive Behavior
+
+### Breakpoints (Recommended)
+- **Desktop**: `1366px` and above (full layout)
+- **Tablet**: `768px - 1365px` (adjusted spacing)
+- **Mobile**: Below `768px` (hamburger menu)
+
+### Desktop (≥ 1366px)
+- Full header layout as designed
+- All navigation items visible
+- Container padding: `83px`
+
+### Tablet (768px - 1365px)
+- Reduce container padding to `24px`
+- Maintain two-tier structure
+- Consider hiding some utility items
+
+### Mobile (< 768px)
+- Collapse to hamburger menu
+- Show only logo and menu icon
+- Height: `56px` (reduced)
+- Menu icon: `24px × 24px`
+
+## Accessibility
+
+### ARIA Labels
+- Logo: `aria-label="Home"`
+- Navigation: `<nav role="navigation" aria-label="Main navigation">`
+- User menu: `aria-label="User account menu"`
+- Language switcher: `aria-label="Change language"`
+
+### Keyboard Navigation
+- All interactive elements must be keyboard accessible
+- Tab order: Left to right, top to bottom
+- Focus indicators: `outline: 2px solid #28b16d`
+- Focus offset: `outline-offset: 2px`
+
+### Color Contrast
+- **White on Black**: 21:1 (WCAG AAA) ✓
+- **#E6E6E6 on Black**: 16.2:1 (WCAG AAA) ✓
+- **White on #28b16d**: 2.63:1 (requires icon or bold text for AA)
+- **White on #ff3d16**: 3.28:1 (WCAG AA for large text) ✓
+
+## States & Interactions
+
+### Link Hover States
+```css
+Default: color: #E6E6E6
+Hover: color: #FFFFFF
+Active: color: #FFFFFF, opacity: 0.8
+```
+
+### Button Hover States
+```css
+Default: background: #28b16d
+Hover: background: #239f5f, transform: translateY(-1px)
+Active: background: #1e8a52, transform: translateY(0)
+Focus: outline: 2px solid #28b16d, outline-offset: 2px
+```
+
+### Dropdown Interactions
+- **Trigger**: Click or hover (choose one for consistency)
+- **Animation**: Fade in + slide down (200ms ease-out)
+- **Close**: Click outside or click trigger again
+- **Overlay**: Semi-transparent backdrop on mobile
+
+## Z-Index Hierarchy
+```
+Header Container: z-index: 1000
+  └── Dropdown Menu: z-index: 1001
+  └── Mobile Menu: z-index: 1002
+Badge (NEW): z-index: 1 (relative to parent)
+```
+
+## Performance Considerations
+
+### Image Optimization
+- Logo: SVG (< 5KB)
+- Icons: SVG sprite sheet or icon font
+- Background images: WebP format with PNG fallback
+
+### Loading Strategy
+- Header: Above the fold (critical CSS)
+- Icons: Preload critical icons
+- Fonts: Use `font-display: swap` for Lato
+
+## Animation Specifications
+
+### Transitions
+- **Link Hover**: `color 200ms ease-in-out`
+- **Button Hover**: `background 200ms ease-in-out, transform 150ms ease-out`
+- **Dropdown Open**: `opacity 200ms ease-out, transform 200ms ease-out`
+- **Mobile Menu**: `transform 300ms cubic-bezier(0.4, 0, 0.2, 1)`
+
+### Transforms
+- **Button Hover**: `translateY(-1px)`
+- **Dropdown**: `translateY(8px)` to `translateY(0)`
+
+## Implementation Notes
+
+### CSS Custom Properties (Variables)
+```css
+:root {
+  /* Colors */
+  --header-bg-top: #000000;
+  --header-bg-main: rgba(0, 0, 0, 0.5);
+  --header-text-primary: #FFFFFF;
+  --header-text-secondary: #E6E6E6;
+  --header-border: rgba(222, 222, 222, 0.15);
+  --header-cta-bg: #28b16d;
+  --header-cta-bg-hover: #239f5f;
+  --header-badge-bg: #ff3d16;
+  
+  /* Spacing */
+  --header-container-padding: 83px;
+  --header-top-height: 36px;
+  --header-main-height: 69px;
+  --header-max-width: 1200px;
+  
+  /* Typography */
+  --header-font-sm: 14px;
+  --header-font-md: 16px;
+  --header-font-xs: 8px;
+  
+  /* Z-index */
+  --header-z-index: 1000;
+}
+```
+
+### Sticky Header Behavior
+- Position: `sticky` or `fixed`
+- Top: `0`
+- Width: `100%`
+- Background: Add slight blur on scroll (`backdrop-filter: blur(8px)`)
+- Shadow on scroll: `box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15)`
+
+### Component Library Mapping
+If using component libraries:
+- **Shadcn/UI**: Use NavigationMenu component
+- **Headless UI**: Use Popover for dropdowns
+- **React**: Separate components for TopBar, MainNav, Logo, NavLink, CTAButton
+
+## Design Tokens Summary
+
+| Token Name | Value | Usage |
+|------------|-------|-------|
+| `header.bg.top` | `#000000` | Top bar background |
+| `header.bg.main` | `rgba(0,0,0,0.5)` | Main nav background |
+| `header.text.primary` | `#FFFFFF` | Primary text color |
+| `header.text.secondary` | `#E6E6E6` | Secondary text color |
+| `header.cta.bg` | `#28b16d` | CTA button background |
+| `header.badge.bg` | `#ff3d16` | Badge background |
+| `header.border` | `rgba(222,222,222,0.15)` | Border color |
+| `header.height.top` | `36px` | Top bar height |
+| `header.height.main` | `69px` | Main nav height |
+| `header.height.total` | `105px` | Combined height |
+| `header.padding.x` | `83px` | Horizontal padding |
+| `header.max-width` | `1200px` | Content max width |
+| `header.font.family` | `Lato, sans-serif` | Font family |
+| `header.font.size.sm` | `14px` | Small text |
+| `header.font.size.md` | `16px` | Medium text |
+| `header.font.size.xs` | `8px` | Badge text |
+| `header.icon.size` | `18px` | Standard icon size |
+| `header.button.radius` | `8px` | Button border radius |
+| `header.badge.radius` | `9.706px` | Badge border radius |
+
+## File Organization
+
+### Recommended Structure
+```
+src/
+├── components/
+│   └── header/
+│       ├── Header.tsx (Main container)
+│       ├── TopBar.tsx (Utility navigation)
+│       ├── MainNav.tsx (Primary navigation)
+│       ├── Logo.tsx
+│       ├── NavLink.tsx
+│       ├── CTAButton.tsx
+│       ├── Badge.tsx
+│       ├── LanguageSwitcher.tsx
+│       ├── UserMenu.tsx
+│       └── MobileMenu.tsx
+├── styles/
+│   └── header.css (or header.module.css)
+└── assets/
+    └── icons/
+        └── header/ (SVG icons)
+```
+
+---
+
+**Version**: 1.0.0  
+**Last Updated**: October 4, 2025  
+**Design Source**: Figma - "Investor - Bayut.sa" (Node ID: 653:4264)
